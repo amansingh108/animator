@@ -1,0 +1,14 @@
+.array {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.array span{
+  background-color: blue;
+  margin: 20px;
+  float: left;
+  border-color:yellow;
+  border:5px;
+}
+
+
