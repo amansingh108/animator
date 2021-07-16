@@ -40,21 +40,21 @@ module.exports = sort
   \******************************/
 /***/ ((module) => {
 
-const sort = (inputArr,sidecallback,pickcallback,dropcallback) => {
+const sort = (inputArr,callback) => {
     let n = inputArr.length;
         for (let i = 1; i < n; i++) {
             // Choosing the first element in our unsorted subarray
             let current = inputArr[i];
-            pickcallback(i)
             // The last element of our sorted subarray
-            let j = i-1; 
+            let j = i-1;
+            let side = []
             while ((j > -1) && (current < inputArr[j])) {
                 inputArr[j+1] = inputArr[j];
-                sidecallback(j)
+                side.push(j) 
                 j--;
             }
             inputArr[j+1] = current;
-            dropcallback(i,j+1)
+            callback(i,side,j+1)
         }
     return inputArr;
 }
@@ -455,7 +455,7 @@ const diagonalHelper = (id,distance,height,step) => {
   //console.log(id,distance,height,step)
   let xpos = horizontal_pos[id]
   let ypos = vertical_pos[id]
-  console.log(id,xpos,ypos,xpos+distance,ypos+distance)
+  //console.log(id,xpos,ypos,xpos+distance,ypos+distance)
   setTimeout(diagonal_animate,time,id,xpos,ypos,xpos+distance,ypos+height) 
   time = time+step
   horizontal_pos[id] = xpos+distance
@@ -630,19 +630,6 @@ document.getElementById('insertion_sort').onclick = () => {
   let input = document.getElementById('ar').value // input from form
   const step = 1000
 
-  const pick = (id) => {
-    diagonalHelper(id,0,40,step)
-  }
-
-  const moveside = (id) => {
-    diagonalHelper(id,cellsize+margin,0,step)
-
-  }
-
-  const drop = (x,y) => {
-
-  }
-
   // initializing vertical positions
   for(let i = 0;i<input.length;i++){
     vertical_pos.push(0) // all zero at the beginning
@@ -650,9 +637,19 @@ document.getElementById('insertion_sort').onclick = () => {
   
 
   main(input,(arr) =>{
-    pick('0')
-    moveside('1')
-    _insertionsort__WEBPACK_IMPORTED_MODULE_2___default()(arr,(x,y)=> console.log('horizontal',x,y),(x)=> console.log('pick',x),(x,y)=>console.log('drop',x,y))
+    _insertionsort__WEBPACK_IMPORTED_MODULE_2___default()(arr,(pick,shift,drop)=>{
+      let pickid = id[pick]
+      // move pick down
+      diagonalHelper(pickid,0,40,step)
+      for(let index of shift){
+        diagonalHelper(id[index],cellsize+margin,0,step)
+        let currid = id[index]
+        id[index+1] = currid
+      }
+      id[drop] = pickid
+      let dropdistance = (drop-pick)*(cellsize+margin)
+      diagonalHelper(id[drop],dropdistance,-40,step)
+    })
   }) // parse and display
     return false
 }
