@@ -1,14 +1,86 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: "Helvetica", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.4;
+	background-color: #A9BA9D;
+	position: relative;
+}
+
+form{
+	float: center;
+	width: 400px;
+	padding: 2.5rem 0.625rem;
+	margin: 5rem auto;
+}
+
+input, button{
+	font-size: inherit;
+	font-family: inherit;
+	line-height: inherit;
+}
+
+input{
+	margin: 0 auto 1.25rem auto;
+	background-color: #A9BA9D;
+	border: 1px solid #8A9A5B;
+	padding: 0.25rem;
+	display: block;
+	width: 100%;
+	height: 2.25rem;
+}
+
+button#clear{
+	display: block;
+	width: 90%;
+	height: 2.25rem;
+	padding: 0.25rem;
+	margin: 0 auto 1.25rem auto;
+	border: solid;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	background: #37af65;
+}
+
+form#buttons{
+	width: 700px;
+	
+	float: center;
+}
+
+form#buttons button{
+	display: inline-flex;
+	justify-content: center;
+	width: 8rem;
+	height: 2.25rem;
+	padding: 0.25rem;
+	border: solid;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	background: #37af65;
+}
+
 .array {
-  list-style-type: none;
-  padding-left: 0px;
+  	list-style-type: none;
+  	align-items: center;
+	margin: 2rem 800px;
 }
 
 .array span{
-  background-color: blue;
-  margin: 20px;
-  float: left;
-  border-color:yellow;
-  border:5px;
+	display: inline-flex;
+	justify-content: center;
+	border: 5px solid #8A9A5B;
+	border-radius: 5px;
+	font-size: 1em;
+	font-family: sans-serif;
+	font-weight: bold;
+	padding: 20px;
 }
 
 
