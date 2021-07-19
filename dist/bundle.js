@@ -556,8 +556,8 @@ const main = async (str,callback) => {
   const list = await parse(str)
   await clearCells()
   const maxdigits = await addCellsGetSize(list)
-  cellsize = maxdigits*10
-  setSize(maxdigits*10,40)
+  cellsize = 30
+  setSize(40,40)
   //sort(list,(sorted)=>console.log(sorted))
   //console.log('hello')
   //test(maxdigits)
