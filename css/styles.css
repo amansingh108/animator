@@ -7,10 +7,15 @@
 body{
 	font-family: "Helvetica", sans-serif;
 	font-size: 1rem;
-	font-weight: 400;
 	line-height: 1.4;
 	background-color: #A9BA9D;
-	position: relative;
+	min-width: 980px;
+	text-align: center;
+}
+
+div#main{
+	width: 980px;
+	margin: 0 auto;
 }
 
 form{
@@ -20,6 +25,11 @@ form{
 	margin: 5rem auto;
 }
 
+label{
+	font-size: 1.25rem;
+	float: left;
+}
+
 input, button{
 	font-size: inherit;
 	font-family: inherit;
@@ -27,30 +37,27 @@ input, button{
 }
 
 input{
-	margin: 0 auto 1.25rem auto;
+	width: 100%;
+	width: 100%;
+	padding: 0.25rem;
+	margin: 0 auto 1rem auto;
 	background-color: #A9BA9D;
 	border: 1px solid #8A9A5B;
-	padding: 0.25rem;
-	display: block;
-	width: 100%;
-	height: 2.25rem;
 }
 
 button#clear{
-	display: block;
-	width: 90%;
+	width: 80%;
 	height: 2.25rem;
 	padding: 0.25rem;
 	margin: 0 auto 1.25rem auto;
-	border: solid;
+	background: #37af65;
+	border: 3px solid #2e3436;
 	border-radius: 0.25rem;
 	cursor: pointer;
-	background: #37af65;
 }
 
 form#buttons{
 	width: 700px;
-	float: center;
 }
 
 form#buttons button{
@@ -59,16 +66,16 @@ form#buttons button{
 	width: 8rem;
 	height: 2.25rem;
 	padding: 0.25rem;
-	border: solid;
+	background: #37af65;
+	border: 3px solid #2e3436;
 	border-radius: 0.25rem;
 	cursor: pointer;
-	background: #37af65;
 }
 
 
 .array {
-	padding: 2rem auto;
 	display: flex;
+	padding: 2rem auto;
 	justify-content: center;
 
 }
@@ -76,13 +83,11 @@ form#buttons button{
 .array span{
 	display: inline-flex;
 	justify-content: center;
-  	margin: 10px;
-  	padding: 20px;
-  	border: 5px solid #808000;
-  	background-color: #6B8E23;
-	border-radius: 5px;
-	font-size: 1em;
-	font-family: sans-serif;
 	font-weight: bold;
   	text-align: center;
+  	margin: 10px;
+  	padding: 20px;
+  	background-color: #6B8E23;
+  	border: 5px solid #808000;
+	border-radius: 5px;
 }
