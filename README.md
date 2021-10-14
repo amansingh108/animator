@@ -1,2 +1,2 @@
-#Animator.
-Animate the working of various algorithms. 
+# animator.
+Animate the working of various algorithms.----
